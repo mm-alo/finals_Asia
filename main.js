@@ -54,6 +54,16 @@ const db = mysql.createConnection({
     });
   });
 
+  //updating blog posts
+  app.put('/posts/:id', (req, res) => {
+    const { title, content, author } = req.body;
+    const sql = 'UPDATE posts SET title = ?, content = ?, author = ? WHERE id = ?';
+    db.query(sql, [title, content, author, req.params.id], (err) => {
+      if (err) return res.status(500).send(err);
+      res.json({ id: req.params.id, title, content, author });
+    });
+  });
+
 
 
   
