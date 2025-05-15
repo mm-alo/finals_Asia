@@ -44,6 +44,16 @@ const db = mysql.createConnection({
     });
   });
 
+  //create new blog posts
+  app.post('/posts', (req, res) => {
+    const { title, content, author } = req.body;
+    const sql = 'INSERT INTO posts (title, content, author) VALUES (?, ?, ?)';
+    db.query(sql, [title, content, author], (err, result) => {
+      if (err) return res.status(500).send(err);
+      res.status(201).json({ id: result.insertId, title, content, author });
+    });
+  });
+
 
 
   
