@@ -8,15 +8,37 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
+//localserver
 app.listen(port,()=>{
     console.log('Running on port ' + port)
     console.log('Server is running on http://localhost:3000')
-}) //localserver
+}) 
+
+//database connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'blog_db'
+  });
+
+  db.connect(err => {
+    if (err) throw err;
+    console.log('Connected to MySQL!');
+  });
+
+  //retrive all blog posts
+  app.get('/posts', (req, res) => {
+    db.query('SELECT * FROM posts', (err, results) => {
+      if (err) return res.status(500).send(err);
+      res.json(results);
+    });
+  });
 
 
-
-let blogs = [
+  
+  
+let posts = [
     {
         title: "How to Start a Tech Blog in 2025",
         content: "Learn how to launch a tech blog by picking a niche and writing consistently.",
