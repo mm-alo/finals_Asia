@@ -144,33 +144,33 @@ app.delete('/posts/:id', authenticateToken, (req, res) => {
 
 
   
-let posts = [
-    {
-        title: "How to Start a Tech Blog in 2025",
-        content: "Learn how to launch a tech blog by picking a niche and writing consistently.",
-        author: "Jane Martinez"
-        },
-      {
-        title: "Top 10 VS Code Extensions for Developers",
-        content: "Boost your coding workflow with popular VS Code extensions like Prettier and GitLens.",
-        author: "Daniel Park"
-      },
-      {
-        title: "The Future of Web Development: Trends to Watch",
-        content: "Explore new trends like serverless, WebAssembly, and Svelte shaping web development.",
-        author: "Fatima Noor"
-      },
-      {
-        title: "Writing Clean Code: Best Practices",
-        content: "Use clear names, small functions, and avoid repeated code to write clean code.",
-        author: "Liam Chen"
-      },
-      {
-        title: "Deploying Your Blog with Netlify and GitHub",
-        content: "Host your blog for free by connecting your GitHub repo to Netlify.",
-        author: "Amira Johnson"
-      }
+// let posts = [
+//     {
+//         title: "How to Start a Tech Blog in 2025",
+//         content: "Learn how to launch a tech blog by picking a niche and writing consistently.",
+//         author: "Jane Martinez"
+//         },
+//       {
+//         title: "Top 10 VS Code Extensions for Developers",
+//         content: "Boost your coding workflow with popular VS Code extensions like Prettier and GitLens.",
+//         author: "Daniel Park"
+//       },
+//       {
+//         title: "The Future of Web Development: Trends to Watch",
+//         content: "Explore new trends like serverless, WebAssembly, and Svelte shaping web development.",
+//         author: "Fatima Noor"
+//       },
+//       {
+//         title: "Writing Clean Code: Best Practices",
+//         content: "Use clear names, small functions, and avoid repeated code to write clean code.",
+//         author: "Liam Chen"
+//       },
+//       {
+//         title: "Deploying Your Blog with Netlify and GitHub",
+//         content: "Host your blog for free by connecting your GitHub repo to Netlify.",
+//         author: "Amira Johnson"
+//       }
  
-]
+// ]
 
 
